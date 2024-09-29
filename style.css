@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+/*Interface*/
+
+.interface {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #09a116;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-title {
+    color: #03530a;
+    text-decoration: none;
+    margin: 0;
+}
+
+.logo-title2 {
+    color: #06770c;
+    text-decoration: none;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#menuToggle {
+    display: none;
+}
+
+#menuToggle input {
+    display: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+#menuToggle input:checked ~ span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menuToggle input:checked ~ span:nth-child(2) {
+    opacity: 0;
+}
+
+#menuToggle input:checked ~ span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#menu {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    left: -300px;
+    background: #ededed;
+    list-style-type: none;
+    padding: 50px 20px;
+    transition: left 0.3s ease-in-out;
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menuToggle input:checked ~ #menu {
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    #menuToggle {
+        display: block;
+    }
+}
+
+
+/* Section Bem-vindo */
+.section-welcome {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/src/cachorro-e-gato-bricando.jpg');
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.section-welcome h1 {
+    margin: 0;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #18b820; 
+}
+
+.section-welcome span {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.section-welcome button {
+    background-color: #18b820; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.section-welcome button a {
+    color: white;
+    text-decoration: none;
+}
+
+.section-welcome button:hover {
+    background-color: #09a116;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+.success {
+    color: green;
+    font-size: 0.9em;
+}
+
+/* Sobre nós */
+.sobrenos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.sobre-title {
+    color: #09a116;
+    margin-bottom: 30px;
+    font-size: 37px;
+    justify-content: space-around;
+    display: flex;
+
+}
+
+.paragrafo {
+    margin-top: -20px;
+}
+
+.paragrafo-2 {
+    margin-top: 15px;
+}
+
+
+@media(min-width: 1200px) {
+    .sobrenos {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.conteudo {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.img-cachorro {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+@media(min-width: 768px) {
+    .img-cachorro {
+        margin-top: 0;
+        margin-left: 20px;
+        border-radius: 20px;
+    }
+}
+
+
+/*Serviços*/
+
+.services-container {
+    text-align: center;
+}
+
+.services-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #08a115;
+    font-size: 37px;
+}
+
+.service-box {
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+}
+
+.service-icon {
+    font-size: 50px;
+    transition: transform 0.3s;
+}
+
+.service-box:hover .service-icon {
+    transform: rotate(20deg);
+}
+
+
+
+/*Produtos*/
+
+
+.main-produtos h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 37px;
+    color: #08a115;
+}
+
+/*Agendamento*/
+
+.agendamento {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.agendamento h2 {
+    color: #09a116;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #09a116;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #06770c;
+}
+
+
+/*footer*/
+
+
+.footer {
+    background-color: #058610; 
+    color: white;
+    padding: 20px 0;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer h2 {
+    margin-bottom: 15px;
+    color: #09ad17;
+}
+
+.footer p, .footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #06770c; 
+    padding-top: 20px 0;
+    background-color: #058610; 
+    color: white;
+}
+
+.footer-bottom p {
+    color: #09ad17; 
+}
+
+
+.footer-bottom h2 {
+    color: rgba(2, 66, 5, 0.867); 
+}
+
+/*cookies mensagem*/
+
+.cookies-msg {
+    width: 80%;
+    background-color: #f9f9f9; 
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #e1e1e1;
+    display: none;
+}
+
+.cookies-msg.mostrar {
+    display: block; 
+}
+
+.cookies-msg .cookies-txt {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    color: #333; 
+}
+
+.cookies-msg .cookies-btn {
+    margin-left: 30px;
+}
+
+.cookies-msg .cookies-btn button {
+    background-color: #09a116;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: .2s;
+    border: none; 
+    border-radius: 5px; 
+    color: white;
+}
+
+.cookies-msg .cookies-btn button:hover {
+    transform: scale(0.95);
+    background-color: #08a115; 
+}
+
+
+@media (max-width: 768px) {
+    .cookies-msg {
+        width: 90%;
+        bottom: 10%;
+        padding: 10px;
+    }
+
+    .cookies-msg .cookies-txt {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .cookies-msg .cookies-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .cookies-msg .cookies-btn button {
+        width: 100%;
+        padding: 10px;
+    }
+}
